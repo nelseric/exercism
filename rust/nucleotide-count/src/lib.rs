@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::collections::hash_map::Entry;
 
 pub fn count(nucleotide: char, dna: &str) -> usize {
   let counts = nucleotide_counts(dna);
@@ -14,9 +13,10 @@ pub fn nucleotide_counts(dna: &str) -> HashMap<char, usize> {
   counts.insert('A', 0);
   counts.insert('T', 0);
 
-  for c in dna.chars() {
-    let mut count = counts.entry(c).or_insert(0);
-    *count += 1;
+  for ref c in dna.chars() {
+    if let Some(count) = counts.get_mut(c){
+      *count += 1;
+    }
   }
 
   counts
