@@ -15,6 +15,9 @@
     "extends": "airbnb",
     "env": {
       "jest": true
+    },
+    "rules": {
+      "no-restricted-syntax": 0
     }
   }
 }
