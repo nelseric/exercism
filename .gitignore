@@ -1,3 +1,4 @@
 exercism.sublime-workspace
 *.swp
 *.pyc
+node_modules
